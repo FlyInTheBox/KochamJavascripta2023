@@ -9,4 +9,7 @@ sekcja = document.getElementsByTagName("section");
 for (const el of sekcja) {
     el.style.border= "2px solid brown";
 }
+glowna = document.getElementsByClassName('main_column');
+console.log('glowna');
+
 
