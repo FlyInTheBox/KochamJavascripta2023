@@ -10,6 +10,9 @@ for (const el of sekcja) {
     el.style.border= "2px solid brown";
 }
 glowna = document.getElementsByClassName('main_column');
-console.log('glowna');
+console.log(glowna[0]);
+glowna[0].innerHTML = "<h1>Specjalność Szefa:</h1>";
+glowna.appendChild('menu');
+
 
 
