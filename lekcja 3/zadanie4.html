@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 4</title>
+  <style>
+    body {
+      color: green;
+      background-color: pink;
+      font-family: "Comic Sans MS";
+    }
+    pre {
+      word-wrap: break-word;
+      width: 20vw;
+    }
+    a:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<h1>tekst 1 <a id="0" onclick="hidenshow(this)">&#8615;</a></h1>
+<pre style="display: none;" id="txt0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Assumenda, atque dolorem iste nesciunt non obcaecati optio quam quibusdam quisquam quod recusandae reiciendis?
+  Animi cum iusto nostrum, praesentium quas quisquam sequi.</pre>
+<h1>tekst 2 <a id="1" onclick="hidenshow(this)">&#8615;</a></h1>
+<pre style="display: none;" id="txt1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Accusamus consectetur culpa, cupiditate, deleniti distinctio, dolores dolorum ducimus impedit ipsa itaque neque nihil saepe soluta sunt tempore vel velit!
+  Amet, eius.</pre>
+<h1>tekst 3 <a id="2" onclick="hidenshow(this)">&#8615;</a></h1>
+<pre style="display: none;" id="txt2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Architecto aut commodi consequatur dignissimos dolores est excepturi exercitationem illo laudantium, maiores nobis numquam,
+  quaerat sequi sunt tempora tenetur totam vero vitae.</pre>
+<h1>tekst 4 <a id="3" onclick="hidenshow(this)">&#8615;</a></h1>
+<pre style="display: none;" id="txt3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Accusantium adipisci aliquam consequatur dicta dignissimos, dolorum facilis impedit in non nostrum quod sapiente sequi velit?
+  Asperiores doloribus incidunt quibusdam soluta veritatis?</pre>
+<h1>tekst 5 <a id="4" onclick="hidenshow(this)">&#8615;</a></h1>
+<pre style="display: none;" id="txt4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium, alias aliquid dignissimos, expedita,
+  id labore molestiae mollitia nihil nostrum quae quo quod soluta!
+  Deserunt non quidem voluptatum. Numquam, quae!</pre>
+<script>
+  function hidenshow(element) {
+    tekstId = element.getAttribute('id');
+    preId = document.getElementById('txt'+tekstId);
+    if (preId.style.display == 'none'){
+      preId.style.display = 'block';
+      element.innerHTML = '&#8613;';
+    }
+     else {
+      preId.style.display = 'none';
+      element.innerHTML = '&#8615;';
+    }
+
+
+
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 3</title>
+</head>
+<body>
+<div>
+    <textarea id="yellowArea" onfocus="this.style.backgroundColor='yellow';"></textarea>
+    <textarea id="yellowArea1" onfocus="colorChange()"></textarea>
+</div>
+
+<p>
+    <input id="uInput" type="text" onblur="inputUppercase()">
+</p>
+
+<p>
+    <select id="select1" onchange="colorChangeSelect()">
+        <option>black</option>
+        <option>brown</option>
+        <option>blue</option>
+        <option>blueviolet</option>
+        <option>burlywood</option>
+        <option>bisque</option>
+    </select>
+</p>
+
+<p ondblclick="this.style.fontSize = 'medium'" onclick="this.style.fontSize = 'xx-large' ">dowolnym tekstem</p>
+
+<div>
+<img width="450px" alt="piwo" oncontextmenu="alert(this.src)" src="piwo.jpg">
+</div>
+
+<div>
+    <input onkeyup="document.getElementById('p1').innerText = this.value" type="text">
+    <p id="p1"></p>
+</div>
+
+<h1 style="color: green; position: fixed" onmouseout="this.style.textShadow = 'none'" onmouseover="this.style.textShadow = 'green 2px 2px 5px'">dowolnym tekstem</h1>
+
+<script>
+    function colorChange() {
+        document.getElementById('yellowArea1').style.backgroundColor = 'yellow';
+    }
+    function inputUppercase() {
+        document.getElementById('uInput').value = document.getElementById('uInput').value.toUpperCase();
+    }
+    function colorChangeSelect() {
+        document.getElementById('select1').style.color = document.getElementById('select1').value;
+    }
+</script>
+</body>
+</html>
