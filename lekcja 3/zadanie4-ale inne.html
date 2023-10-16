@@ -8,13 +8,16 @@
             border: 3px dashed magenta;
         }
         input {
-            float: left;
             margin: 5px;
         }
+        /*div{*/
+        /*    display: flex;*/
+        /*    flex-direction: column;*/
+        /*}*/
     </style>
 </head>
 <body>
- <form action="zadanie4-ale%20inne.html">
+ <form>
      <fieldset>
          <legend>Autouzupełnianie</legend>
          <input id="hInput" type="hidden" data-song1="Grimes - Oblivion" data-song2="Ratty - Sunrise" data-song3="Moderat - Seamonkey">
@@ -26,6 +29,7 @@
 <script>
     cDiv = document.getElementById('cDiv');
     function showData() {
+        cDiv.innerHTML = '';
         data = document.getElementById('hInput').dataset;
         console.log(data);
         element1 = document.createElement("input");
@@ -34,8 +38,10 @@
         element2.value = data['song2'];
         element3 = document.createElement("input");
         element3.value = data['song3'];
-        ebr = document.createElement('br');
-        cDiv.append(element1,element2,element3,ebr);
+        br1 = document.createElement("br");
+        br2 = document.createElement("br");
+        br3 = document.createElement("br");
+        cDiv.append(element1,br1,element2,br2,element3,br3);
 
 
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Okna dialogowe</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<button onclick="alert('To jest właśnie proste wywołanie okna alert.');">Proste wywołanie okna alert</button>
+<br><br>
+<button id="eventAlertButton">Wywołanie okna alert poprzez nasłuchiwanie zdarzenia</button>
+<br><br>
+<button id="confirmButton">Wywołanie okna confirm</button>
+<br><br>
+<button id="promptButton">Wywołanie okna prompt</button>
+<br><br>
+<button id="Zaczynamy">Zaczynamy</button>
+
+<script>
+    const eventAlertButton = document.getElementById('eventAlertButton');
+    eventAlertButton.addEventListener('click', function() {
+        alert('Możesz być z siebie dumny');
+    });
+
+    const confirmButton = document.getElementById('confirmButton');
+    confirmButton.addEventListener('click', oknoConfirm);
+    function oknoConfirm() {
+        const potwierdzenie = confirm('Czy jesteś pewien, że chcesz kontynuować?');
+        if (potwierdzenie) {
+            alert('No to kontynuuj...');
+        } else {
+            alert('Przykro mi, że nie chcesz kontynuować...');
+        }
+    }
+
+
+    const promptButton = document.getElementById('promptButton');
+    promptButton.addEventListener('click', oknoPrompt);
+    function oknoPrompt() {
+        const imie = prompt('Podaj swoje imię:');
+        if (imie !== null) {
+            alert('Witaj ' + imie);
+        } else {
+            alert('Anulowałeś akcję, a okienko zwróciło ' + imie);
+        }
+    }
+    const Zaczynamy = document.getElementById('Zaczynamy');
+    Zaczynamy.addEventListener('click', zaczPrompt);
+    function zaczPrompt() {
+        const sala = prompt('Wpisz numer sali:');
+        if (sala !== null) {
+            alert('Jesteś w ' + sala);
+        } else {
+            alert('Anulowałeś akcję, a okienko zwróciło ' + sala);
+        }
+    }
+
+
+</script>
+</body>
+</html>
