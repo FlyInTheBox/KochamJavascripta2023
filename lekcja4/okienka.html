@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prompt</title>
+  <style>
+    .diva {
+      display: flex;
+      flex-direction: row;
+    }
+
+     .divc {
+       display: flex;
+       width: 70px;
+       height:70px;
+       margin: 0;
+     }
+     p{
+       margin: auto;
+     }
+    .blur {
+        font-size: 40px;
+        color: transparent;
+        text-shadow: 0 -8px 16px #000;
+        user-select: none;
+    }
+  </style>
+</head>
+<body>
+<button id="promptButton">Kolor sufitu</button>
+<br><hr><br>
+<h1 id="colorshape">Zmień kolor tekstu</h1>
+<div class="diva">
+  <div class="divc" onmouseover="h1c.style.color = 'gold'; " onmouseout="h1c.style.color = 'black'" style="background-color: gold;"><p>gold</p></div>
+  <div class="divc" onmouseover="h1c.style.color = 'khaki'; " onmouseout="h1c.style.color = 'black'" style="background-color: khaki"><p>khaki</p></div>
+  <div class="divc" onmouseover="h1c.style.color = 'silver'; " onmouseout="h1c.style.color = 'black'" style="background-color: silver"><p>silver</p></div>
+  <div class="divc" onmouseover="h1c.style.color = 'peru'; " onmouseout="h1c.style.color = 'black'" style="background-color: peru"><p>peru</p></div>
+</div>
+<br><hr><br>
+<h1 style="float: left;">Numer telefonu: 12</h1><h1 name="numer" class="blur" style="float: left;" >3 </h1><h1 style="float: left;">-</h1><h1 name="numer" class="blur" style="float: left;">456</h1><h1 style="float: left;">-</h1><h1 name="numer" class="blur" >789</h1>
+<label for="box"><input id="box" type="checkbox" onchange="for (i++)[0].classList.toggle('blur')">Pokaż cały numer telefonu</label>
+
+
+
+<script>
+  h1c = document.getElementById('colorshape');
+  numer = document.getElementsByName('numer');
+
+  const promptButton = document.getElementById('promptButton');
+  promptButton.addEventListener('click', oknoPrompt);
+  function oknoPrompt() {
+    const kolor = prompt('Jakiego koloru jest niebo?:');
+    if (kolor !== null) {
+      alert('Niebo jest koloru: ' + kolor);
+    } else {
+      alert('Anulowałeś akcję, a okienko zwróciło ' + kolor);
+    }
+  }
+</script>
+</body>
+</html>
