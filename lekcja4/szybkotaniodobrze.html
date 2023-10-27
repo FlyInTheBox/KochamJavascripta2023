@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jak żyć?</title>
+</head>
+<body>
+<label for="1"><input type="checkbox" name="szybko" id="szybko" onchange="limitCheckbox()">Szybko</label>
+<label for="2"><input type="checkbox" name="tanio" id="tanio" onchange="limitCheckbox()">Tanio</label>
+<label for="3"><input type="checkbox" name="dobrze" id="dobrze" onchange="limitCheckbox()">Dobrze</label>
+<script>
+  dobrze = document.getElementById("dobrze");
+  tanio = document.getElementById("tanio");
+  szybko = document.getElementById("szybko");
+  checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+  function limitCheckbox() {
+      checkedboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+      if (checkedboxes.length > 2) {
+
+              if (tanio.checked && szybko.checked) {
+                  dobrze.checked = false;
+              }
+              else if (dobrze.checked && szybko.checked) {
+                  tanio.checked = false;
+              }
+              else if (dobrze.checked && tanio.checked) {
+                  szybko.checked = false;
+              }
+  }}
+</script>
+</body>
+</html>
