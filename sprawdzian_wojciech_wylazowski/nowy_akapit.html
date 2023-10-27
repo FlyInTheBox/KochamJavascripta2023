@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nowy akapit</title>
+</head>
+<body>
+<script>
+    body = document.getElementsByTagName('body');
+    akapit1 = document.createElement('p');
+    body[0].append(akapit1);
+    akapit1.style.cssText = 'background-color: orange;';
+    akapit1.innerText += 'Bardzo przykładowy tekst na pomarańczowym tle';
+    console.log(akapit1);
+</script>
+</body>
+</html>
