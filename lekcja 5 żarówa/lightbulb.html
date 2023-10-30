@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Lampa jak ...</title>
+    <style>
+    .divA {
+        text-align: center;
+    }
+    table,tr {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+    }
+    td {
+        height: 5vh;
+        max-width: 50vh;
+    }
+    tr:nth-child(odd) {
+        background-color: lightcoral;
+    }
+    </style>
+</head>
+<body>
+    <div class="divA">
+    <img id="img" src="lightOff.jpg">
+    </div>
+    <table>
+        <tr>
+            <td><button onclick="actionLightOn()">Włącz</button></td>
+            <td><button onclick="actionLightOff()">Wyłącz</button></td>
+        </tr>
+        <tr>
+            <td><input id="radioOn" name="radio" type="radio" onclick="actionLightOn()">Włącz</input></td>
+            <td><input id="radioOff" name="radio" type="radio" onclick="actionLightOff()">Wyłącz</input></td>
+        </tr>
+        <tr>
+            <td colspan="2"><label id="checkboxLabel" for="checkbox"><input id="checkbox" type="checkbox" onclick="actionLight()">Wyłączona</label></td>
+        </tr>
+    </table>
+<script>
+    img = document.getElementById('img');
+    radioOn = document.getElementById('radioOn');
+    radioOff = document.getElementById('radioOff');
+    bulbOff = 'http://localhost:63342/KochamJavascripta2023/lekcja%205%20%C5%BCar%C3%B3wa/lightOff.jpg';
+    bulbOn = 'http://localhost:63342/KochamJavascripta2023/lekcja%205%20%C5%BCar%C3%B3wa/lightOn.png';
+    checkbox = document.getElementById('checkboxLabel');
+    function actionLight() {
+        if (img.src == bulbOff) {
+            img.src = bulbOn;
+            checkbox.innerHTML = '<input id="checkbox" type="checkbox" checked onclick="actionLight()">Włączona';
+            radioOn.checked = true;
+
+        }
+        else {
+            img.src = bulbOff;
+            checkbox.innerHTML = '<input id="checkbox" type="checkbox" onclick="actionLight()">Wyłączona';
+            radioOff.checked = true;
+        }
+    }
+    function actionLightOn() {
+        img.src = bulbOn;
+        checkbox.innerHTML = '<input id="checkbox" type="checkbox" checked onclick="actionLight()">Włączona';
+        radioOn.checked = true;
+
+
+    }
+    function actionLightOff() {
+        img.src = bulbOff ;
+        checkbox.innerHTML = '<input id="checkbox" type="checkbox" onclick="actionLight()">Wyłączona';
+        radioOff.checked = true;
+    }
+</script>
+</body>
+</html>
