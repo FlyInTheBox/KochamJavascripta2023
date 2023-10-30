@@ -1,0 +1,135 @@
+Funkcje matematyczne
+ABS
+CEIL
+FLOOR
+MAX
+MIN
+POW
+ROUND
+SQRT
+
+
+
+1.  ZŁĄCZENIE WEWNĘTRZNE
+id klienta,
+nazwa klienta,
+        miasto klienta,
+nazwa regionu klienta,
+nazwisko opiekuna klienta
+    dla klientaów o id nazwie na literę 'N' i literę 'P'
+
+SELECT  customer.id AS 'ID Klient',
+        customer.name AS 'Nazwa',
+        customer.city AS 'Miasto',
+        region.name AS 'Region',
+        emp.last_name AS 'Nazwisko Opiekuna'
+FROM    customer
+        JOIN region ON customer.region_id = region.id
+        JOIN emp ON customer.sales_rep_id = emp.id
+WHERE   customer.name LIKE 'N%' OR customer.name LIKE 'P%';
+
+
+2.   ZŁĄCZENIE ZEWNĘTRZNE (wszyscy klienci)
+id klienta,
+nazwa klienta,
+kraj klienta,
+nazwisko opiekuna klienta
+nazwa departamentu opiekuna
+     dla klientów z Kielc i Radomia
+
+SELECT  customer.id AS 'ID Klient',
+        customer.name AS 'Nazwa',
+        customer.country AS 'Kraj',
+        emp.last_name AS 'Nazwisko',
+        dept.name AS 'Nazwa Departamentu'
+FROM    customer
+        LEFT OUTER JOIN emp ON customer.sales_rep_id = emp.id
+        LEFT OUTER JOIN dept ON emp.dept_id = dept.id
+WHERE customer.city = 'Kielce' OR customer.city = 'Radom';
+
+3.    ZŁĄCZENIE WEWNĘTRZNE
+nazwisko pracownika,
+imię pracownika
+stanowisko pracownika
+nazwa regionu pracownika
+dla pracowników z Azji i Europy
+
+SELECT  emp.last_name AS 'Nazwisko',
+        emp.first_name AS 'Imie',
+        emp.title AS 'Stanowisko',
+        region.name AS 'Region'
+FROM    emp
+        JOIN dept ON emp.dept_id = dept.id
+        JOIN region ON dept.region_id = region.id
+WHERE   region.name = 'Asia' OR region.name = 'Europe';
+
+
+4.   ZŁACZENIE WEWNĘTRZNE
+id magazynu,
+miasto magazynu,
+kraj magazynu
+nazwa regionu magazynu,
+  nazwisko managera
+      dla magazynów z regionu Europa i Azja
+
+SELECT  warehouse.id AS 'ID Magazynu',
+        warehouse.city AS 'Miasto',
+        warehouse.country AS 'Kraj',
+        region.name AS 'Region',
+        emp.last_name AS 'Nazwisko Menagera Magazynu'
+FROM    warehouse
+        JOIN region ON warehouse.region_id = region.id
+        JOIN emp ON warehouse.manager_id = emp.id
+WHERE region.name = 'Europe' OR region.name = 'Asia';
+
+
+
+5.    ZŁACZENIE ZEWNĘTRZNE (wszystkie magazyny)
+id magazynu,
+miasto magazynu,
+numer telefonu do magazynu
+nazwa regionu magazynu,
+  nazwisko managera
+      dla magazynów z Polski i Czech
+
+SELECT  warehouse.id AS 'ID Magazynu',
+        warehouse.city AS 'Miasto',
+        warehouse.phone AS 'Numer telefonu',
+        region.name AS 'Region',
+        emp.last_name AS 'Nazwisko Menagera Magazynu'
+FROM    warehouse
+        RIGHT OUTER JOIN region ON warehouse.region_id = region.id
+        RIGHT OUTER JOIN emp ON warehouse.manager_id = emp.id
+WHERE region.country = 'Polska' OR region.country = 'Czechy';
+
+6.   ZŁACZENIE ZEWNĘTRZNE (wszystkie produkty)
+id produktu,
+nazwa produktu,
+        miasto magazynu w którym znajduje się produkt,
+        kraj magazynu w którym znajduje się produkt,
+      dla produktów o sugerowanej cenie poniżej 100 i pozyżej 10000
+
+SELECT  product.id AS 'Id Produktu',
+        product.name AS 'Nazwa',
+        warehouse.city AS 'Miasto Magazynu',
+        warehouse.country AS 'Kraj Magazynu'
+FROM    product
+        RIGHT OUTER JOIN inventory ON product.id = inventory.product_id
+        RIGHT OUTER JOIN warehouse ON inventory.warehouse_id = warehouse.id
+WHERE   product.suggested_price < 100 OR product.suggested_price > 10000;
+
+
+
+
+7.   ZŁĄCZENIE WEWNĘTRZNE
+id produktu,
+        nazwa produktu,
+        liczba produktu na magazynie,
+        numer telefonu i miasto magazynu,
+     dla produktów, których liczba na magazynie jest mniejsza niż 10 lub większa niż 1000
+
+
+8.  ZŁACZENIE WEWNĘTRZNE
+nazwisko pracownika
+imię pracownika
+    dla pracowników, sprzedali lodówkę lub telewizor

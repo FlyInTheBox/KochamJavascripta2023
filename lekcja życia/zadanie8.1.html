@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML i JavaScript</title>
+  <style>
+    h1 {
+      text-shadow: 2px 2px rgb(128, 128, 128);
+    }
+    p, button {
+      background-color: lightsteelblue;
+      border-top: 2px solid darkblue;
+      border-bottom: 2px solid darkblue;
+      padding: 10px;
+      border-left: 0;
+      border-right:0;
+    }
+  </style>
+</head>
+<body>
+<h1 id="header">Witaj!</h1>
+
+<script>
+  let number = parseFloat(prompt("Podaj dowolną liczbę rzeczywistą"));
+  document.getElementById("header").innerHTML = number;
+
+  let abs = Math.abs(number);
+  let ceil = Math.ceil(number);
+  let floor = Math.floor(number);
+  let max = Math.max(number, -number);
+  let min = Math.min(number, -number);
+  let pow = Math.pow(number, 2);
+  let round = Math.round(number);
+  let sqrt = Math.sqrt(number);
+  let random= Math.random()
+
+  document.write("<p>abs(" + number + ") = " + abs + "</p>");
+  document.write("<p>ceil(" + number + ") = " + ceil + "</p>");
+  document.write("<p>floor(" + number + ") = " + floor + "</p>");
+  document.write("<p>max(" + number + ", " + (-number) + ") = " + max + "</p>");
+  document.write("<p>min(" + number + ", " + (-number) + ") = " + min + "</p>");
+  document.write("<p>pow(" + number + ", 2) = " + pow + "</p>");
+  document.write("<p>round(" + number + ") = " + round + "</p>");
+  document.write("<p>sqrt(" + number + ") = " + sqrt.toFixed(2) + "</p>");
+  document.write("<p>random() = " + random + "</p>");
+
+  document.write('<button onclick="location.reload()">Odśwież stronę</button>');
+</script>
+</body>
+</html>
