@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slice</title>
+</head>
+<body>
+<p id="1">Mikołaj Kopernik – polski polihistor pochodzenia niemieckiego</p>
+<p id="2"></p>
+<p id="3"></p>
+<button onclick="div1()">Wytnij znaki od 26 do 36</button>
+<button onclick="div2()">Wytnij znaki od końca: od 5 do 12</button>
+<script>
+  text = document.getElementById('1').innerText;
+  function div1() {
+    text1 = document.getElementById('2');
+    text1.innerText = text.slice(26, 36);
+    text1.style.backgroundColor = '#c6ddec';
+    text1.style.padding ='5px';
+  }
+
+  function div2() {
+  text2 = document.getElementById('3');
+  text2.innerText = text.slice(text.length-5,text.length-12);
+  }
+
+
+</script>
+</body>
+</html>
