@@ -25,29 +25,30 @@
     <br>
     <input type="button" value="Narysuj" onclick="drawRectangle()">
 </form>
-
 <div id="result">
-    <!-- Wynik będzie wyświetlany tutaj -->
 </div>
 
 
 <script>
     function drawRectangle() {
-        const width = parseInt(document.getElementById("width").value);
-        const height = parseInt(document.getElementById("height").value);
-        const color = document.getElementById("color").value;
+        width = parseInt(document.getElementById("width").value);
+        height = parseInt(document.getElementById("height").value);
+        color = document.getElementById("color").value;
 
-        const obwod = 2 * (width + height);
-        const pole = width * height;
+        obwod = 2 * (width + height);
+        pole = width * height;
 
-        const rectangleDiv = document.createElement("div");
+        rectangleDiv = document.createElement("div");
         rectangleDiv.style.width = width + "cm";
         rectangleDiv.style.height = height + "cm";
         rectangleDiv.style.backgroundColor = color;
+        rectangleDiv.style.float = 'left';
         rectangleDiv.className = "rectangle";
 
-        const resultDiv = document.getElementById("result");
-        resultDiv.innerHTML = `<br><br><br>Obwód: ${obwod} cm, Pole: ${pole} cm<sup>2</sup>`;
+        resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `<br> Obwód: ${obwod} cm, Pole: ${pole} cm²`;
+        resultDiv.style.display = 'flex';
+        resultDiv.style.flexDirection = 'column-reverse';
 
         resultDiv.appendChild(rectangleDiv);
     }
