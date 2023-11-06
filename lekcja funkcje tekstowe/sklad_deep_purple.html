@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skład Deep Purple</title>
+    <style>
+        .diva {
+            display: flex;
+            flex-direction: column;
+            width: 10vw;
+        }
+        p{
+            display: inline;
+        }
+
+    </style>
+</head>
+<body>
+<div><p>Deep Purple - brytyjski zespół rockowy, założony w 1968 roku w składzie:</p><p id="1"></p></div>
+<hr>
+<div class="diva">
+<button onclick="RB()">Doklej tekst: Ritche Blackmore</button>
+<button onclick="JL()">Doklej tekst: Jon Lord</button>
+<button onclick="NS()">Doklej tekst: Nick Simper</button>
+<button onclick="IP()">Doklej tekst: Ian Paice</button>
+<button onclick="RE()">Doklej tekst: Rod Evans</button>
+</div>
+<script>
+    p = document.getElementById('1');
+    function RB() {
+        if (p.innerText.includes('Ritche Blackmore')){
+            return 0;
+        }
+        else {
+            p.innerText += ', Ritche Blackmore' ;
+            if (p.innerText.startsWith(',')) {
+                p.innerText = p.innerText.substring(1);
+            }
+        }
+    }
+    function JL() {
+        if (p.innerText.includes('Jon Lord')){
+            return 0;
+        }
+        else {
+            p.innerText += ', Jon Lord'
+            if (p.innerText.startsWith(',')) {
+                p.innerText = p.innerText.substring(1);
+            }
+        }
+
+    }
+    function NS() {
+        if (p.innerText.includes('Nick Simper')){
+            return 0;
+        }
+        else {
+            p.innerText += ', Nick Simper'
+            if (p.innerText.startsWith(',')) {
+                p.innerText = p.innerText.substring(1);
+            }
+        }
+    }
+    function IP() {
+        if (p.innerText.includes('Ian Paice')){
+            return 0;
+        }
+        else {
+            p.innerText += ', Ian Paice'
+            if (p.innerText.startsWith(',')) {
+                p.innerText = p.innerText.substring(1);
+            }
+        }
+    }
+    function RE() {
+        if (p.innerText.includes('Rod Evans')){
+            return 0;
+        }
+        else {
+            p.innerText += ', Rod Evans'
+            if (p.innerText.startsWith(',')) {
+                p.innerText = p.innerText.substring(1);
+            }
+        }
+    }
+</script>
+</body>
+</html>

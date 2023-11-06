@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Od1Do30</title>
+</head>
+<body>
+<h1></h1>
+<h2></h2>
+<h2></h2>
+<h2></h2>
+<button id="generateButton">Generuj losową liczbę</button>
+
+<script>
+  const button = document.getElementById("generateButton");
+
+  button.addEventListener("click", () => {
+    const losowa = Math.floor(Math.random() * 30) + 1;
+
+    const h1 = document.querySelector("h1");
+    h1.textContent = `Wylosowana liczba:` + losowa;
+    h1.style.color = "darkorchid";
+
+    const h2 = document.querySelectorAll("h2")[0];
+    if (losowa >= 20) {
+      h2.textContent = "Wylosowana liczba jest większa lub równa 20";
+      h2.style.color = "magenta";
+    } else {
+      h2.textContent = "";
+    }
+
+    const h2_2 = document.querySelectorAll("h2")[1];
+    if (losowa % 2 === 0) {
+      h2_2.textContent = "Wylosowana liczba jest liczbą parzystą";
+      h2_2.style.color = "navy";
+    } else {
+      h2_2.textContent = "Wylosowana liczba nie jest liczbą parzystą";
+      h2_2.style.color = "navy";
+    }
+
+    const h2_3 = document.querySelectorAll("h2")[2];
+    if (losowa <= 10) {
+      h2_3.textContent = "Wylosowana liczba należy do pierwszej dziesiątki";
+      h2_3.style.color = "deeppink";
+    } else if (losowa <= 20) {
+      h2_3.textContent = "Wylosowana liczba należy do drugiej dziesiątki";
+      h2_3.style.color = "deeppink";
+    } else if (losowa <= 30) {
+      h2_3.textContent = "Wylosowana liczba należy do trzeciej dziesiątki";
+      h2_3.style.color = "deeppink";
+    }
+  });
+</script>
+</body>
+</html>

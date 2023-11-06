@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Split</title>
+</head>
+<body>
+<p id="fibonaczi">0|1|1|2|3|5|8</p>
+<button onclick="createAndDisplayArray()">Utwórz tablicę liczb i wyświetl ją w konsoli</button>
+
+<script>
+    function createAndDisplayArray() {
+        const fibonacziString = document.getElementById('fibonaczi').innerText;
+        const fibonacziArray = fibonacziString.split('|').map(Number);
+        console.log(fibonacziArray);
+    }
+</script>
+</body>
+</html>
