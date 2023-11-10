@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <title>Miesiace</title>
 <style>
-    h1 {
+    p {
         text-align: center;
-        font-family: cursive;
-    }
-    h3 {
-        border-top: 2px dashed pink;
-        border-bottom: 2px dashed pink;
-        text-align: center;
-        font-family: cursive;
+        font-style: italic;
+        font-family: "Comic Sans MS";
+        border-top: 4px dashed navy;
+        border-bottom: 4px dashed navy;
+        font-size: 30px;
+        padding: 10px;
     }
 </style>
 </head>
@@ -21,31 +20,32 @@
 <script>
     let miesiac = Math.floor(Math.random() * 15) + 1;
 
-    document.body.innerHTML += '<h1 style="border: 4px solid navy;">' + miesiac + '</h1>';
+    document.body.innerHTML += '<p>' + miesiac + '</p>';
+    document.body.innerHTML += ''
 
     switch(miesiac) {
         case 1:
         case 2:
         case 3:
-            document.body.innerHTML += '<h3 style="">I kwartał</h3>';
+            document.body.innerHTML += '<p style="background-color: #c6b6f0;">I kwartał</p>';
             break;
         case 4:
         case 5:
         case 6:
-            document.body.innerHTML += '<h3>II kwartał</h3>';
+            document.body.innerHTML += '<p style="background-color: #e1cffc;">II kwartał</p>';
             break;
         case 7:
         case 8:
         case 9:
-            document.body.innerHTML += '<h3>III kwartał</h3>';
+            document.body.innerHTML += '<p style="background-color: #e1cffc;">III kwartał</p>';
             break;
         case 10:
         case 11:
         case 12:
-            document.body.innerHTML += '<h3>IV kwartał</h3>';
+            document.body.innerHTML += '<p>IV kwartał</p>';
             break;
         default:
-            document.body.innerHTML += '<h3>Błędny numer miesiąca</h3>';
+            document.body.innerHTML += '<p>Błędny numer miesiąca</p>';
     }
 </script>
 </body>
