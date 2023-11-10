@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Indeks kuchenny</title>
+    <title>dzielenie</title>
+    <style>
+        body{
+            font-family: "Tahoma";
+        }
+        input {
+            margin: 4px;
+            text-align: right;
+        }
+        p {
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
+<h1>Dzielenie z resztą</h1>
+<h2>Podaj dwie liczby całkowite</h2>
+<p>
+    <input onchange="iloczyn()" id="dzielna" type="number">:
+    <input onchange="iloczyn()" id="dzielnik" type="number">=
+    <input id="wynik" type="number" readonly>reszta<input id="reszta" type="number" readonly>
+</p>
 
+<script>
+    function iloczyn() {
+        dzielna = document.getElementById('dzielna').value;
+        dzielna = Math.round(dzielna);
+        document.getElementById('dzielna').value = dzielna;
+        dzielnik = document.getElementById('dzielnik').value;
+        dzielnik = Math.round(dzielnik);
+        document.getElementById('dzielnik').value = dzielnik;
+        wynik = Math.floor(dzielna/dzielnik);
+        reszta = dzielna%dzielnik;
+        document.getElementById('wynik').value = wynik;
+        document.getElementById('reszta').value = reszta;
+    }
+</script>
 </body>
 </html>
