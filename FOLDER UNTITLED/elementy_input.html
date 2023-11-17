@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        fieldset{
+            text-align: justify;
+            text-justify: auto;
+            max-width: 90vw;
+            text-wrap: wrap;
+
+        }
+    </style>
+</head>
+<body>
+<fieldset id="container">
+    <legend>♣Liczby trzycyfrowe♣</legend>
+</fieldset>
+<p id="counter">Liczb trzycyfrowych, których suma cyfr jest równa 10, jest:</p>
+<script>
+    let counterj = 0;
+    container = document.getElementById('container');
+    for (let i=100; i<999; i++) {
+        let sNumber = i.toString();
+        let output = [];
+        for (var u = 0, len = sNumber.length; u < len; u += 1) {
+            output.push(+sNumber.charAt(u));
+        }
+        for (var o = 0, sum = 0; o < output.length; sum += output[o++]) {
+            console.log(sum);
+        }
+        if (sum === 10) {
+            spana = document.createElement('span');
+            spana.id = "p" + i;
+            spana.style.color = 'red'
+            spana.innerText += i + ',';
+            container.appendChild(spana);
+            counterj = counterj + 1;
+        }
+        else {
+            spana = document.createElement('span');
+            spana.id = "p" + i;
+            spana.innerText += i + ',';
+            container.appendChild(spana);
+        }
+        counter = document.getElementById('counter');
+        counter.innerText += counterj;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Liczby 3-cyfrowe</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<fieldset id="numbersFieldset">
+  <legend>♣ Liczby trzycyfrowe ♣</legend>
+</fieldset>
+
+<p id="resultText">Liczb trzycyfrowych, których suma jest równa 10 jest: <span id="count"></span></p>
+
+<script>
+  function generateNumbers() {
+    var numbersFieldset = document.getElementById("numbersFieldset");
+    var count = 0;
+
+    for (var i = 100; i <= 999; i++) {
+      var numberStr = i.toString();
+      var sum = 0;
+
+      for (var j = 0; j < numberStr.length; j++) {
+        sum += parseInt(numberStr.charAt(j));
+      }
+
+      var numberElement = document.createElement("span");
+      numberElement.textContent = i;
+
+      if (sum === 10) {
+        numberElement.classList.add("red");
+        count++;
+      }
+
+      numbersFieldset.appendChild(numberElement);
+
+      if (i < 999) {
+        var comma = document.createElement("span");
+        comma.textContent = ", ";
+        numbersFieldset.appendChild(comma);
+      }
+    }
+
+    var dot = document.createElement("span");
+    dot.textContent = ".";
+    numbersFieldset.appendChild(dot);
+
+    document.getElementById("count").textContent = count;
+  }
+
+  generateNumbers();
+</script>
+
+</body>
+</html>
