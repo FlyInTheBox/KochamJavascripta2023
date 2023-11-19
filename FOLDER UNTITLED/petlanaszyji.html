@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma</title>
+    <style>
+        body{
+        min-width: 700px;
+        width: auto !important;  
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+    </form>
+
+
+    <script>
+    var form = document.getElementById("myForm");
+    form.style.display = 'flex';
+    form.style.flexDirection = 'row';
+    form.style.flexWrap = 'wrap';
+
+    for (var i = 1; i <= 100; i++) {
+        var input = document.createElement("input");
+        input.type = "text";
+        input.id = "input" + i;
+        input.name = "input" + i;
+        input.placeholder = "Element numer " + i;
+        input.style.margin = "10px";
+        input.style.boxShadow = "5px 5px lightblue";
+        input.style.top = '2vh';
+        input.style.flex = '1 0 16%';
+        input.style.minWidth = '110px';
+        
+
+        form.appendChild(input);
+    };
+    </script>
+
+</body>
+</html>
