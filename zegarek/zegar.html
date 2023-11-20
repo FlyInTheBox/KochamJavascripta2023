@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .watchout {
+            display: flex;
+            flex-wrap: wrap;
+            width: 500px;
+        }
+        #clock {
+            border-radius: 50%;
+            border: 2px solid  black;
+            height: 20em;
+            position: relative;
+            width: 20em;
+        }
+
+        .hand {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        #hours_hand {
+            background: #000;
+            height: 20%;
+            left: 48.75%;
+            position: absolute;
+            top: 30%;
+            transform-origin: 50% 100%;
+            width: 1.5%;
+        }
+        #minutes_hand {
+            background: #000;
+            height: 40%;
+            left: 49%;
+            position: absolute;
+            top: 10%;
+            transform-origin: 50% 100%;
+            width: 1%;
+
+        }
+        .frame {
+            border: 1px solid dimgray;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 20px;
+            width: fit-content;
+        }
+        input[type=range] {
+            accent-color: mediumorchid;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<h3>Miara kąta między wskazówkami zegara</h3>
+
+<div class="watchout">
+<div class="frame">
+    <p>Miarę kąta między wskazówką minutową a godzinową można obliczyć według wzoru</p>
+    <p>
+        <img alt="wzór" src="task_689.bmp">
+    </p>
+</div>
+
+<div class="frame input_output">
+    <label for="hours_range">Godziny [0, 11]</label>
+    <br>
+    <input onchange="changeHour()" id="hours_range" max="11" min="0" name="hours_range" type="range" value="0"> <br>
+    <output id="hours_output">0</output>
+</div>
+
+
+<div class="frame input_output">
+    <label for="minutes_range">Minuty [0, 60]</label>
+    <br>
+    <input onchange="changeMin()" id="minutes_range" max="60" min="0" name="minutes_range" type="range" value="0">
+    <br>
+    <output id="minutes_output">0</output>
+</div>
+
+<div id="clock">
+    <div class="hand" id="hours_hand" style="transform: rotate(@deg);"></div>
+    <div class="hand" id="minutes_hand" style="transform: rotate(@deg);"></div>
+</div>
+
+<div class="frame input_output">
+    <label for="angle">Kąt</label>
+    <br><br>
+    <output id="angle">0°</output>
+    <p>_________________</p>
+</div>
+</div>
+
+<script src="zegar.js"></script>
+</body>
+</html>
