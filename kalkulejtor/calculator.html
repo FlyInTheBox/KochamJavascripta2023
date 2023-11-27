@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 2px;
+        }
+        p {
+            border: 2px solid black;
+            height: 50px;
+            margin: 1px;
+        }
+        .p1{
+            background-color: dimgray;
+        }
+        button{
+            width: 60px;
+            height: 50px;
+            background-color: lightgrey;
+            border-radius: 5px;
+            font-size: larger;
+            border: 1px solid black;
+        }
+        .numbers {
+            color: white;
+            background-color: gray;
+        }
+        .clear {
+            background-color: red;
+            color: white;
+        }
+        .colspan {
+            width: 124px;
+        }
+    </style>
+</head>
+<body>
+     <table>
+         <tr>
+             <td colspan="5"><p class="p1"></p></td>
+         </tr>
+         <tr>
+             <td colspan="5"><p></p></td>
+         </tr>
+         <tr>
+             <td rowspan="3"></td>
+             <td><button class="numbers" value="7">7</button></td>
+             <td><button class="numbers" value="8">8</button></td>
+             <td><button class="numbers" value="9">9</button></td>
+             <td><button value="÷">÷</button></td>
+         </tr>
+         <tr>
+             <td><button class="numbers" value="4">4</button></td>
+             <td><button class="numbers" value="5">5</button></td>
+             <td><button class="numbers" value="6">6</button></td>
+             <td><button value="x">x</button></td>
+         </tr>
+         <tr>
+             <td><button class="numbers" value="1">1</button></td>
+             <td><button class="numbers" value="2">2</button></td>
+             <td><button class="numbers" value="3">3</button></td>
+             <td><button value="-">-</button></td>
+         </tr>
+         <tr>
+             <td><button class="clear" value="C">C</button></td>
+             <td><button class="numbers" value="0">0</button></td>
+             <td colspan="2"><button class="colspan" value="=">=</button></td>
+             <td><button value="+">+</button></td>
+         </tr>
+
+     </table>
+</body>
+</html>
