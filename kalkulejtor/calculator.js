@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         num2 = parseFloat(num2);
 
         if (operator === '÷' && num2 === 0) {
-            window.open('https://fakebsod.com/windows-8-and-10', '_blank');
+            window.open('https://fakebsod.com/windows-8-and-10', '_blank',"toolbar=yes,scrollbars=yes,resizable=yes,top=0,left=0,width=4000,height=4000");
             return 'No to masz problem';
         }
 
