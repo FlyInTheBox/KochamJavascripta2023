@@ -5,50 +5,55 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentInput = '';
     let currentOperator = '';
     let previousInput = '';
+    let lastResult = '';
 
     calculator.addEventListener('click', function (event) {
         if (event.target.tagName === 'BUTTON') {
             const value = event.target.value;
 
-            if (!isNaN(value) || value === '.') {
-                // If the clicked button is a number or a dot
+            if (!isNaN(value)) {
                 currentInput += value;
             } else if (value === 'C') {
-                // Clear button
                 currentInput = '';
                 currentOperator = '';
                 previousInput = '';
+                lastResult = '';
             } else if (value === '=') {
-                // Equal button
-                if (currentInput !== '' && previousInput !== '') {
+                if (currentInput !== '' && previousInput !== '' && currentOperator !== '') {
                     currentInput = calculate(previousInput, currentInput, currentOperator);
+                    lastResult = currentInput;
                     currentOperator = '';
                     previousInput = '';
+                    outputDisplay.innerText = currentInput || previousInput || '0';
                 }
             } else {
-                // Operator button
                 if (currentInput !== '') {
                     if (previousInput === '') {
                         previousInput = currentInput;
                         currentInput = '';
                         currentOperator = value;
                     } else {
-                        previousInput = calculate(previousInput, currentInput, currentOperator);
+                        currentInput = calculate(previousInput, currentInput, currentOperator);
+                        lastResult = currentInput;
+                        previousInput = currentInput;
                         currentInput = '';
                         currentOperator = value;
                     }
                 }
             }
 
-            // Update input and output displays
-            inputDisplay.textContent = currentInput || previousInput || '0';
-            outputDisplay.textContent = currentInput || previousInput || '0';
+            inputDisplay.innerText = previousInput + currentOperator + currentInput;
         }
     });
 
     function calculate(num1, num2, operator) {
         num1 = parseFloat(num1);
         num2 = parseFloat(num2);
+
+        if (operator === '÷' && num2 === 0) {
+            window.open('https://fakebsod.com/windows-8-and-10', '_blank');
+            return 'Spróbuj jeszcze raz a ci skasuje windowsa';
+        }
 
         switch (operator) {
             case '+':
