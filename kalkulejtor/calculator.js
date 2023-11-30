@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (operator === '÷' && num2 === 0) {
             window.open('https://fakebsod.com/windows-8-and-10', '_blank');
-            return 'Spróbuj jeszcze raz a ci skasuje windowsa';
+            return 'No to masz problem';
         }
 
         switch (operator) {
