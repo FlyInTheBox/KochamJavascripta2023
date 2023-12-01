@@ -34,11 +34,12 @@
         board.type = 'a';
         body.appendChild(board);
         board = document.querySelector('ol');
-        for (let i=0; i<tab.length; i++) {
+        for (let item of tab) {
             content = document.createElement('li');
-            content.innerText = tab[i];
+            content.innerText = item;
             board.appendChild(content);
         }}
+
 
     function f3(){
         if (document.querySelector("ol")!= null) {
@@ -48,9 +49,10 @@
         board.type = 'I';
         body.appendChild(board);
         board = document.querySelector('ol');
-        for (let i=0; i<tab.length; i++) {
+        tab.forEach (f22);
+        function f22(item) {
             content = document.createElement('li');
-            content.innerText = tab[i];
+            content.innerText = item;
             board.appendChild(content);
         }}
 
