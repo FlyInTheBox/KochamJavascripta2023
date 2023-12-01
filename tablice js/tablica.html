@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablice</title>
+</head>
+<body>
+<button onclick="f1()">Pętla for (JS) + lista 1 2 3 (HTML)</button>
+<button onclick="f2()">Pętla for of (JS) + lista a b c (HTML)</button>
+<button onclick="f3()">Pętla forEach (JS) + lista I II III(HTML)</button>
+</body>
+<script>
+    const tab = ["Pies", "Kot", "Szczur", "Chomik", "Niedźwiedź","Lew"];
+    body = document.querySelector('body');
+
+    function f1(){
+        if (document.querySelector("ol")!= null) {
+            document.querySelector("ol").remove();
+        }
+        board = document.createElement('ol');
+        body.appendChild(board);
+        board = document.querySelector('ol');
+        for (let i=0; i<tab.length; i++) {
+            content = document.createElement('li');
+            content.innerText = tab[i];
+            board.appendChild(content);
+        }}
+
+    function f2(){
+        if (document.querySelector("ol")!= null) {
+            document.querySelector("ol").remove();
+        }
+        board = document.createElement('ol');
+        board.type = 'a';
+        body.appendChild(board);
+        board = document.querySelector('ol');
+        for (let i=0; i<tab.length; i++) {
+            content = document.createElement('li');
+            content.innerText = tab[i];
+            board.appendChild(content);
+        }}
+
+    function f3(){
+        if (document.querySelector("ol")!= null) {
+            document.querySelector("ol").remove();
+        }
+        board = document.createElement('ol');
+        board.type = 'I';
+        body.appendChild(board);
+        board = document.querySelector('ol');
+        for (let i=0; i<tab.length; i++) {
+            content = document.createElement('li');
+            content.innerText = tab[i];
+            board.appendChild(content);
+        }}
+
+
+</script>
+</html>

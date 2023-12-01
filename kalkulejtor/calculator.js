@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentOperator = '';
                 previousInput = '';
                 lastResult = '';
+                inputDisplay.innerText = '';
             } else if (value === '=') {
                 if (currentInput !== '' && previousInput !== '' && currentOperator !== '') {
                     currentInput = calculate(previousInput, currentInput, currentOperator);
