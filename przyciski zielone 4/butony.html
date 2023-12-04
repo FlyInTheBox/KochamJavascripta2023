@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Butony</title>
+    <style>
+        body {
+            font-family: Calibri;
+        }
+        .border {
+            border: 3px double red;
+        }
+        button {
+            width: 15vw;
+            height: 15vw;
+            background-color: lightgreen;
+            border: 1px solid green;
+            margin: 20px;
+            font-size: 1.3vw;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid green;
+            margin: 20px;
+        }
+        .bottom {
+            border: 1px solid blue;
+            margin: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #1 {
+            order: 1;
+        }
+        #2 {
+            order: 2;
+        }
+        #3 {
+            order: 3;
+        }
+        #4 {
+            order: 4;
+        }
+    </style>
+</head>
+<body>
+<div class="border">
+<div class="container">
+    <button onclick="lista()">Oryginalna lista imion</button>
+    <button onclick="idBorda = '2'; lista(); board.innerHTML = board.innerHTML.toLowerCase();">Wszystkie litery małe</button>
+    <button onclick="firstUpperCase()">Pierwsza litera wielka</button>
+    <button onclick="gwiazdki()">Tyle gwiazdek ile liter</button>
+</div>
+    <div class="bottom" id="bottom"></div>
+</div>
+<script>
+    bottom = document.getElementById('bottom');
+    bottom.style.display = 'none';
+    idBorda = '1';
+function lista() {
+    const tab = ["Marcin", "Ania", "Monika", "Piotr", "Beata","ania", "marcin", "piotr", "PIOTR", "ANIA","MONIKA"];
+    bottom = document.getElementById('bottom');
+    bottom.style.display = 'flex';
+
+        if (document.getElementById(idBorda) != null) {
+            document.getElementById(idBorda).remove();
+        }
+        board = document.createElement('ul');
+        board.id = idBorda;
+        board.style.backgroundColor = 'lightblue';
+        board.style.border = '1px solid blue';
+        board.style.margin = '20px';
+        board.style.padding = '20px';
+        board.style.width = '100px';
+        board.style.listStyleType = 'none';
+        board.style.fontSize = 'large'
+        bottom.appendChild(board);
+        board = document.getElementById(idBorda);
+        for (let i=0; i<tab.length; i++) {
+            content = document.createElement('li');
+            content.innerText = tab[i];
+            board.appendChild(content);
+        }
+}
+    function firstUpperCase() {
+    idBorda = '3';
+    lista();
+        list = document.getElementById(idBorda);
+        listContent = list.querySelector('li');
+    for (let i=0; i<listContent.length; i++) {
+        listContent[i].innerText = listContent[i].innerText.charAt(0).toUpperCase() + listContent[i].innerText.slice(1);
+    }
+
+    }
+    function gwiazdki() {
+    idBorda = '4';
+    lista();
+        list = document.getElementById(idBorda);
+        listContent = list.querySelector('li');
+        for (let i = 0; i < listContent.length; i++) {
+            listContent[i].innerText = "*".repeat(listContent[i].innerText.length);
+        }
+    }
+</script>
+</body>
+</html>
