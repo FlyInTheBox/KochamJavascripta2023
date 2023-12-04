@@ -87,7 +87,7 @@ function lista() {
     idBorda = '3';
     lista();
         list = document.getElementById(idBorda);
-        listContent = list.querySelector('li');
+        listContent = list.querySelectorAll('li');
     for (let i=0; i<listContent.length; i++) {
         listContent[i].innerText = listContent[i].innerText.charAt(0).toUpperCase() + listContent[i].innerText.slice(1);
     }
@@ -97,7 +97,7 @@ function lista() {
     idBorda = '4';
     lista();
         list = document.getElementById(idBorda);
-        listContent = list.querySelector('li');
+        listContent = list.querySelectorAll('li');
         for (let i = 0; i < listContent.length; i++) {
             listContent[i].innerText = "*".repeat(listContent[i].innerText.length);
         }
